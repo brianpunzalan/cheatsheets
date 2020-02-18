@@ -15,10 +15,10 @@ version: '2'
 
 services:
   web:
-    build: .
-    # build from Dockerfile
-    context: ./Path
-    dockerfile: Dockerfile
+    build:
+      # build from Dockerfile
+      context: ./Path
+      dockerfile: Dockerfile
     ports:
      - "5000:5000"
     volumes:
@@ -53,9 +53,10 @@ docker-compose down
 ```yaml
 web:
   # build from Dockerfile
-  build: .
-  args:     # Add build arguments
-    APP_HOME: app
+  build:
+    context: .
+    args: # Add build arguments
+      APP_HOME: app
 ```
 
 ```yaml
